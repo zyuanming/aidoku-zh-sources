@@ -78,7 +78,7 @@ fn get_manga_list(filters: Vec<Filter>, page: i32) -> Result<MangaPageResult> {
 	let has_more = true;
 	let mut mangas: Vec<Manga> = Vec::new();
 
-	for item in html.select(".common-comic-item").array() {
+	for item in html.select(".comic-item").array() {
 		let item = match item.as_node() {
 			Ok(node) => node,
 			Err(_) => continue,
